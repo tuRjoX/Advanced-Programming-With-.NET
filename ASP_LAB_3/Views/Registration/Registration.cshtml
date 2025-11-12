@@ -1,0 +1,27 @@
+﻿@model ASP_LAB_3.Models.Student
+
+@{
+    ViewBag.Title = "Registration";
+}
+
+<h2>Registration</h2>
+<form method="post">
+    <input type="text" name="Name" value="@Model.Name" placeholder="Enter Your Name" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessageFor(m => m.Name)</span>
+    <br />
+    <input type="text" name="Username" value="@Model.Username" placeholder="Enter Your Username" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessageFor(m => m.Username)</span>
+    <br />
+  <input type="text" name="Id" value="@Model.Id" placeholder="Enter Your Id" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessageFor(m => m.Id)</span>
+    <br />
+    <input type="date" name="DOB" value="@(Model.DOB != DateTime.MinValue ? Model.DOB.ToString("yyyy-MM-dd") : "")" placeholder="Date of Birth" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessageFor(m => m.DOB)</span>
+    <br />
+    <input type="email" name="Email" value="@Model.Email" placeholder="Enter Your Email" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessageFor(m => m.Email)</span>
+    <br />
+    <span class="text-danger">@Html.ValidationMessage("")</span>
+    <br />
+    <input type="submit" value="Registration" class="btn btn-primary" />
+</form>
